@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ryan Rodrigues | Biosite, site simples e site completo</title>
+<meta name="description" content="Biosite por R$ 100, site simples por R$ 250 e site completo sob consulta. Desenvolvedor há mais de 5 anos, hoje AI Engineer na SSB.">
+<!-- Depois de publicar, troque SEU-USUARIO e SEU-REPOSITORIO no og:image pelo endereço real da página. -->
+<meta name="theme-color" content="#0A3D45">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Ryan Rodrigues | Sua presença online, do tamanho do seu negócio">
+<meta property="og:image" content="https://SEU-USUARIO.github.io/SEU-REPOSITORIO/assets/divulgacao.png">
+<meta property="og:description" content="Biosite R$ 100, site simples R$ 250, site completo sob consulta. Chame no WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --sea:#E7F1EF;
+  --ink:#0A3D45;
+  --text:#1F484F;
+  --card:#FFFFFF;
+  --line:#B4D0CC;
+  --sun:#FF8A00;
+  --display:'Unbounded','Trebuchet MS',sans-serif;
+  --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--sea);color:var(--text);
+  font-family:var(--body);font-size:18px;line-height:1.55;
+  padding-bottom:calc(96px + env(safe-area-inset-bottom,0px));
+}
+a{color:inherit}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+header{padding:28px 0 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-family:var(--display);font-weight:700;font-size:18px;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
+.head-link{font-weight:600;color:var(--ink);text-underline-offset:4px}
+
+.hero{padding:64px 0 72px}
+h1{
+  font-family:var(--display);font-weight:700;color:var(--ink);
+  font-size:clamp(1.9rem,6.2vw,3.7rem);line-height:1.08;letter-spacing:-0.025em;
+  margin:0 0 24px;max-width:15em;
+}
+.hero p{max-width:34em;font-size:1.15rem;margin:0 0 32px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  min-height:52px;padding:14px 28px;border-radius:999px;
+  background:var(--sun);color:var(--ink);
+  font-family:var(--body);font-weight:600;font-size:1.05rem;text-decoration:none;
+  border:2px solid var(--ink);
+  transition:background-color .15s ease;
+}
+.btn:hover{background:#FFA033}
+.btn svg{flex:none}
+.btn.ghost{background:transparent}
+.btn.ghost:hover{background:rgba(10,61,69,.08)}
+
+h2{
+  font-family:var(--display);font-weight:600;color:var(--ink);
+  font-size:clamp(1.4rem,3.6vw,2rem);line-height:1.15;letter-spacing:-0.02em;margin:0 0 12px;
+}
+.section-intro{max-width:34em;margin:0 0 40px}
+
+.plans{display:grid;grid-template-columns:1fr;gap:24px;padding-bottom:80px}
+.plan{
+  display:flex;flex-direction:column;gap:20px;
+  background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:28px;
+}
+.shot{position:relative;aspect-ratio:8/5;border:2px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--sea)}
+.shot a{position:absolute;inset:0;display:block;background:var(--card)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.shot.phone{background:#E4DFD3}
+.shot.phone a{background:transparent;display:flex;justify-content:center;align-items:flex-start;padding-top:14px}
+.shot.phone img{width:44%;height:auto;object-fit:initial;border-radius:14px 14px 0 0;box-shadow:0 0 0 2px var(--ink)}
+.plan h3{font-family:var(--display);font-weight:600;font-size:1.5rem;letter-spacing:-0.02em;line-height:1.15;color:var(--ink);margin:0}
+.plan p{margin:0}
+.plan .grow{flex:1;display:flex;flex-direction:column;gap:12px}
+.price{
+  align-self:flex-start;display:inline-block;transform:rotate(-2deg);
+  background:var(--sun);color:var(--ink);border-radius:8px;padding:8px 16px;
+  font-family:var(--display);font-weight:700;font-size:1.9rem;letter-spacing:-0.03em;line-height:1.1;
+}
+.price small{font-size:.95rem;font-weight:600;margin-right:6px;letter-spacing:0}
+.sample{font-weight:600;color:var(--ink);text-underline-offset:4px;word-break:break-all}
+.plan.big{background:var(--ink);color:#DDEBE8;border-color:var(--ink)}
+.plan.big h3,.plan.big .sample{color:#FFFFFF}
+.plan.big .shot{border-color:#FFFFFF}
+.plan.big .btn{border-color:#FFFFFF}
+
+.about{background:var(--card);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:72px 0}
+.about p{max-width:36em;margin:0;font-size:1.2rem;line-height:1.6}
+
+.final{padding:80px 0 64px}
+.final p{max-width:32em;margin:0 0 28px}
+.final .phone{display:block;margin-top:20px;font-weight:600;color:var(--ink);font-size:1.1rem}
+footer{padding:0 0 32px;font-size:.95rem;color:var(--text)}
+
+.sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:10;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));
+  background:var(--sea);border-top:2px solid var(--ink);
+}
+.sticky .btn{width:100%}
+
+@media (min-width:820px){
+  body{padding-bottom:0}
+  .plans{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+  .sticky{display:none}
+  .hero{padding:96px 0 104px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#topo">Ryan Rodrigues</a>
+    <a class="head-link" href="https://wa.me/5521973544768?text=Ol%C3%A1%20Ryan!%20Vi%20sua%20divulga%C3%A7%C3%A3o%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">(21) 97354-4768</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Sua presença online, do tamanho do seu negócio.</h1>
+      <p>Três formatos, do link na bio ao site completo. Escolha o que cabe hoje e fale comigo direto no WhatsApp.</p>
+      <a class="btn" href="https://wa.me/5521973544768?text=Ol%C3%A1%20Ryan!%20Vi%20sua%20divulga%C3%A7%C3%A3o%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <section id="planos" aria-labelledby="t-planos">
+    <div class="wrap">
+      <h2 id="t-planos">Escolha o seu plano</h2>
+      <p class="section-intro">Cada plano tem um tamanho e um preço. O botão de cada um abre uma conversa comigo já com o plano escolhido.</p>
+
+      <div class="plans">
+
+        <article class="plan">
+          <div class="shot phone">
+            <a href="https://miny.site/instituto-manas/" target="_blank" rel="noopener" aria-label="Abrir https://miny.site/instituto-manas/">
+              <img src="assets/biosite-instituto-manas.jpg" alt="Captura do biosite do Instituto Manas no celular" width="560" height="1235">
+            </a>
+          </div>
+          <div class="grow">
+            <h3>Biosite</h3>
+            <p>Um link na bio profissional para o seu Instagram, com todos os seus canais em um só lugar.</p>
+            <a class="sample" href="https://miny.site/instituto-manas/" target="_blank" rel="noopener">miny.site/instituto-manas</a>
+          </div>
+          <span class="price"><small>R$</small>100</span>
+          <a class="btn ghost" href="https://wa.me/5521973544768?text=Ol%C3%A1%20Ryan!%20Tenho%20interesse%20no%20Biosite%20(R%24%20100)." target="_blank" rel="noopener">Quero o biosite</a>
+        </article>
+
+        <article class="plan">
+          <div class="shot">
+            <a href="https://drtainaantunes.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir https://drtainaantunes.vercel.app/">
+              <img src="assets/site-simples-tainaantunes.jpg" alt="Captura do site da nutricionista Tainá Antunes" width="1000" height="571">
+            </a>
+          </div>
+          <div class="grow">
+            <h3>Site simples</h3>
+            <p>Uma página completa com apresentação, serviços e botão direto para o seu WhatsApp.</p>
+            <a class="sample" href="https://drtainaantunes.vercel.app/" target="_blank" rel="noopener">drtainaantunes.vercel.app</a>
+          </div>
+          <span class="price"><small>R$</small>250</span>
+          <a class="btn ghost" href="https://wa.me/5521973544768?text=Ol%C3%A1%20Ryan!%20Tenho%20interesse%20no%20Site%20simples%20(R%24%20250)." target="_blank" rel="noopener">Quero o site simples</a>
+        </article>
+
+        <article class="plan big">
+          <div class="shot">
+            <a href="https://simmonsrj.com.br/" target="_blank" rel="noopener" aria-label="Abrir https://simmonsrj.com.br/">
+              <img src="assets/site-completo-simmonsrj.jpg" alt="Captura do site Simmons Rio de Janeiro" width="1000" height="564">
+            </a>
+          </div>
+          <div class="grow">
+            <h3>Site completo</h3>
+            <p>Projeto maior, com várias páginas, design premium e funcionalidades sob medida.</p>
+            <a class="sample" href="https://simmonsrj.com.br/" target="_blank" rel="noopener">simmonsrj.com.br</a>
+          </div>
+          <span class="price">Sob consulta</span>
+          <a class="btn" href="https://wa.me/5521973544768?text=Ol%C3%A1%20Ryan!%20Tenho%20interesse%20no%20Site%20completo.%20Pode%20me%20passar%20um%20or%C3%A7amento%3F" target="_blank" rel="noopener">Pedir orçamento</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="t-quem">
+    <div class="wrap">
+      <h2 id="t-quem">Quem vai fazer o seu projeto</h2>
+      <p>Sou o Ryan Rodrigues, desenvolvedor há mais de 5 anos. Já trabalhei para fundações de renome mundial e hoje sou AI Engineer para os EUA na SSB, a maior empresa de colchões do mundo.</p>
+    </div>
+  </section>
+
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap">
+      <h2 id="t-final">Qual tamanho cabe no seu negócio?</h2>
+      <p>Me chama no WhatsApp, conta o que você precisa e eu te respondo com o próximo passo.</p>
+      <a class="btn" href="https://wa.me/5521973544768?text=Ol%C3%A1%20Ryan!%20Vi%20sua%20divulga%C3%A7%C3%A3o%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <span class="phone">(21) 97354-4768</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Ryan Rodrigues, desenvolvedor web e AI Engineer.</div>
+</footer>
+
+<div class="sticky">
+  <a class="btn" href="https://wa.me/5521973544768?text=Ol%C3%A1%20Ryan!%20Vi%20sua%20divulga%C3%A7%C3%A3o%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+    Chamar no WhatsApp
+  </a>
+</div>
+
+</body>
+</html>
